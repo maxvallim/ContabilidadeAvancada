@@ -1,0 +1,302 @@
+
+<!DOCTYPE html>
+
+<html lang="pt-br">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Ciências Contábeis · Balanço Patrimonial e DRE</title>
+<style>
+  :root{
+    --bg:#ffffff; --fg:#0a0a0a; --muted:#444; --line:#e6e6e6; --box:#fafafa;
+  }
+  *{box-sizing:border-box}
+  body{margin:0; background:var(--bg); color:var(--fg); font-family:Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; line-height:1.7}
+  .wrap{max-width:1000px; margin:0 auto; padding:28px 22px 80px}
+  header{display:flex; align-items:center; gap:18px; padding:12px 0 24px; border-bottom:1px solid var(--line); margin-bottom:24px}
+  .brand{width:54px; height:54px; display:grid; place-items:center; border:1px solid var(--line); border-radius:8px; background:#fff}
+  .brand svg{width:28px; height:28px}
+  .head h1{font-weight:600; font-size:1.9rem; margin:2px 0 2px; color:#111}
+  .head .meta{color:var(--muted); font-size:.98rem}
+  .subtitle{margin-top:6px; color:#222}
+
+  .layout{display:grid; grid-template-columns:1fr; gap:18px}
+  @media(min-width:1080px){.layout{grid-template-columns:1fr}}
+  nav.toc{position:sticky; top:18px; align-self:start}
+  nav.toc .title{font-weight:700; margin-bottom:8px}
+  nav.toc a{display:block; color:#222; text-decoration:none; padding:6px 0}
+  nav.toc a:hover{color:#000}
+
+  h2{font-weight:600; font-size:1.6rem; margin:38px 0 6px; color:#111}
+  h3{font-weight:600; font-size:1.02rem; margin:22px 0 8px; text-transform:uppercase; letter-spacing:.06em; color:#222}
+  p{font-size:1.04rem; margin:10px 0}
+  ul{padding-left:1.1rem; margin:4px 0 18px}
+  li{margin:6px 0}
+  .box{border:1px solid var(--line); background:var(--box); padding:18px; border-radius:10px}
+  .callout{border:1px solid #efefef; background:linear-gradient(180deg,#fff,#fbfbfb); padding:20px; border-radius:12px}
+  .equation{font-family:ui-monospace,Consolas,monospace; background:#fff; border:1px solid var(--line); padding:10px 12px; border-radius:10px; display:inline-block; font-size:1rem; color:#111}
+  .grid{display:grid; gap:14px}
+  @media(min-width:820px){.grid.cols-2{grid-template-columns:1fr 1fr}}
+  .table{width:100%; border-collapse:separate; border-spacing:0; margin:6px 0 10px; font-size:1rem}
+  .table th,.table td{padding:10px 12px; border-bottom:1px solid var(--line)}
+  .table thead th{font-weight:700; text-align:left; color:#111; border-bottom:1px solid #ddd}
+  .foot{margin-top:28px; color:var(--muted); font-size:.92rem}
+  @media print{a{text-decoration:none; color:#000}}
+
+
+/* Ajustes pós-remoção do sumário */
+main{min-width:0}
+.wrap{padding:24px 16px 64px}
+header{margin-bottom:16px}
+.head h1{font-size:1.85rem; line-height:1.25; word-break:normal; overflow-wrap:break-word; hyphens:auto}
+.subtitle{line-height:1.4}
+h2{font-size:1.55rem; line-height:1.3; word-break:normal; overflow-wrap:break-word; hyphens:auto}
+h3{text-transform:none; letter-spacing:0}
+.table{font-size:0.98rem}
+.grid{gap:12px}
+@media print{.wrap{padding:0}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+<div aria-hidden="true" class="brand">
+<!-- Logo em SVG (monograma MV minimalista) -->
+<svg aria-hidden="true" fill="none" stroke="#111" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" viewbox="0 0 24 24">
+<path d="M4 18 V6 L8 12 L12 6 V18"></path>
+<path d="M13 18 V6 L17 12 L21 6 V18"></path>
+</svg>
+</div>
+<div class="head">
+<h1>Ciências Contábeis · Balanço Patrimonial e DRE</h1>
+<div class="meta">Prof. Max Vallim · {year}</div>
+<div class="subtitle">Estrutura, lógica de formação, principais contas e a conexão entre posição patrimonial e desempenho econômico.</div>
+</div>
+</header>
+<section class="layout">
+<main>
+<section id="bp-essencia">
+<h2>1. Balanço Patrimonial – Essência</h2>
+<p>O Balanço Patrimonial apresenta a posição econômico‑financeira da entidade em uma data específica. É a fotografia do patrimônio: <em>o que a empresa possui</em>, <em>o que deve</em> e <em>o que pertence aos sócios</em>.</p>
+<p class="equation">ATIVO = PASSIVO + PATRIMÔNIO LÍQUIDO</p>
+<div class="grid cols-2">
+<div class="box">
+<h3>Finalidades</h3>
+<ul>
+<li>Avaliar liquidez e capital de giro</li>
+<li>Medir endividamento e alavancagem</li>
+<li>Compreender a composição do patrimônio</li>
+<li>Analisar capacidade de pagamento CP/LP</li>
+</ul>
+</div>
+<div class="box">
+<h3>Boas práticas de leitura</h3>
+<ul>
+<li>Comparar períodos (horizontal) e pesos (vertical)</li>
+<li>Observar contas redutoras (depreciações/amortizações)</li>
+<li>Cruzamento com DRE e Notas Explicativas</li>
+</ul>
+</div>
+</div>
+</section>
+<section id="ativo">
+<h2>2. Ativo</h2>
+<p>Representa bens e direitos sob controle da entidade, capazes de trazer benefícios econômicos futuros.</p>
+<div class="grid cols-2">
+<div class="callout">
+<h3>Ativo Circulante (AC)</h3>
+<ul>
+<li>Caixa e equivalentes</li>
+<li>Clientes / Duplicatas a receber</li>
+<li>Estoques</li>
+<li>Despesas antecipadas</li>
+</ul>
+</div>
+<div class="callout">
+<h3>Ativo Não Circulante (ANC)</h3>
+<ul>
+<li><strong>Realizável a Longo Prazo:</strong> créditos &gt; 12 meses</li>
+<li><strong>Investimentos:</strong> participações permanentes</li>
+<li><strong>Imobilizado:</strong> máquinas, veículos, edifícios <em>(- depreciação acumulada)</em></li>
+<li><strong>Intangível:</strong> marcas, patentes, softwares</li>
+</ul>
+</div>
+</div>
+</section>
+<section id="passivo">
+<h2>3. Passivo</h2>
+<p>Obrigações presentes geradas por eventos passados, cuja liquidação resultará em saída de recursos.</p>
+<div class="grid cols-2">
+<div class="callout">
+<h3>Passivo Circulante (PC)</h3>
+<ul>
+<li>Fornecedores, salários e tributos a pagar</li>
+<li>Empréstimos e financiamentos CP</li>
+<li>Provisões de curto prazo</li>
+</ul>
+</div>
+<div class="callout">
+<h3>Passivo Não Circulante (PNC)</h3>
+<ul>
+<li>Financiamentos e debêntures LP</li>
+<li>Provisões de contingências LP</li>
+<li>Arrendamentos LP</li>
+</ul>
+</div>
+</div>
+</section>
+<section id="pl">
+<h2>4. Patrimônio Líquido (PL)</h2>
+<p>Interesse residual dos proprietários na entidade após a dedução de todos os passivos.</p>
+<div class="grid cols-2">
+<div class="box">
+<h3>Componentes</h3>
+<ul>
+<li>Capital Social</li>
+<li>Reservas de Capital</li>
+<li>Reservas de Lucros (legal, estatutária, contingências, lucros a realizar)</li>
+<li>Ajustes de Avaliação Patrimonial</li>
+<li>Lucros/Prejuízos Acumulados</li>
+</ul>
+</div>
+<div class="box">
+<h3>Pontos de atenção</h3>
+<ul>
+<li>Política de retenção de lucros e distribuição de dividendos</li>
+<li>Eventos subsequentes que alterem o PL</li>
+<li>Correlação direta com o lucro líquido da DRE</li>
+</ul>
+</div>
+</div>
+</section>
+<section id="dre">
+<h2>5. Demonstração do Resultado (DRE)</h2>
+<p>Evidencia o desempenho econômico do período: receitas, custos, despesas e o consequente lucro (ou prejuízo) do exercício.</p>
+<table class="table">
+<thead>
+<tr><th>Estrutura típica</th><th>Exemplo sintético</th></tr>
+</thead>
+<tbody>
+<tr><td>Receita Bruta</td><td>100.000</td></tr>
+<tr><td>(-) Deduções/Impostos</td><td>(10.000)</td></tr>
+<tr><td><strong>= Receita Líquida</strong></td><td><strong>90.000</strong></td></tr>
+<tr><td>(-) Custo (CMV/CPV/CSP)</td><td>(50.000)</td></tr>
+<tr><td><strong>= Resultado Bruto</strong></td><td><strong>40.000</strong></td></tr>
+<tr><td>(-) Despesas Operacionais (vendas, G&amp;A, depreciação)</td><td>(20.000)</td></tr>
+<tr><td>(+/-) Resultado Financeiro</td><td>(2.000)</td></tr>
+<tr><td>(+/-) Outras Receitas/Despesas</td><td>—</td></tr>
+<tr><td><strong>= Resultado antes do IR/CSLL</strong></td><td><strong>18.000</strong></td></tr>
+<tr><td>(-) IR e CSLL</td><td>(4.000)</td></tr>
+<tr><td><strong>= Lucro Líquido</strong></td><td><strong>14.000</strong></td></tr>
+</tbody>
+</table>
+</section>
+<section id="ponte">
+<h2>6. Ponte entre BP e DRE</h2>
+<div class="box">
+<p><strong>Do desempenho ao patrimônio:</strong> o Lucro Líquido apurado na DRE transita para o PL no Balanço ao fim do período. Prejuízo reduz o PL.</p>
+<p class="equation">Lucro Líquido (DRE) → Lucros Acumulados / Reservas (PL) → BP</p>
+</div>
+<div class="grid cols-2">
+<div class="callout">
+<h3>Leitura integrada</h3>
+<ul>
+<li>Coerência entre crescimento do PL e geração de resultado</li>
+<li>Relação entre estoques/contas a receber e margens</li>
+<li>Efeitos de depreciação e endividamento no resultado</li>
+</ul>
+</div>
+<div class="callout">
+<h3>Checklist rápido</h3>
+<ul>
+<li>Classificação CP/LP consistente</li>
+<li>Redutoras aplicadas (depreciação, amortização, exaustão)</li>
+<li>Notas explicativas claras para políticas contábeis</li>
+</ul>
+</div>
+</div>
+</section>
+<section id="exemplo">
+<h2>7. Exemplo Integrado</h2>
+<p><strong>Fatos:</strong> compra de mercadorias 10.000; venda 15.000; estoque final 0.</p>
+<div class="grid cols-2">
+<div class="box">
+<h3>DRE (síntese)</h3>
+<ul>
+<li>Receita de Vendas: 15.000</li>
+<li>CMV: (10.000)</li>
+<li><strong>Lucro Líquido: 5.000</strong></li>
+</ul>
+</div>
+<div class="box">
+<h3>BP (efeitos)</h3>
+<ul>
+<li>Caixa/Clientes ↑ conforme condição da venda</li>
+<li>Estoques → 0</li>
+<li><strong>PL ↑ 5.000</strong> (lucro do período)</li>
+</ul>
+</div>
+</div>
+</section>
+<section id="leituras">
+<h2>8. Leituras e Observações</h2>
+<ul>
+<li>Consistência entre políticas contábeis, DRE e BP</li>
+<li>Importância de análises horizontal/vertical e indicadores</li>
+<li>Transparência via Notas Explicativas</li>
+</ul>
+<p class="foot">© {year} · Prof. Max Vallim · Ciências Contábeis</p>
+</section>
+<section id="exercicios">
+<h2>9. Exercícios Práticos</h2>
+<div class="box">
+<h3>Exercício 1 — Classificação de Contas</h3>
+<p>Classifique as contas abaixo em AC, ANC, PC, PNC ou PL.</p>
+<ul>
+<li>Clientes</li>
+<li>Máquinas e Equipamentos</li>
+<li>Financiamento Bancário (LP)</li>
+<li>Capital Social</li>
+<li>Estoques</li>
+</ul>
+<details><summary>Gabarito</summary>
+<ul>
+<li>Clientes — AC</li>
+<li>Máquinas e Equipamentos — ANC (Imobilizado)</li>
+<li>Financiamento Bancário (LP) — PNC</li>
+<li>Capital Social — PL</li>
+<li>Estoques — AC</li>
+</ul>
+</details>
+</div>
+<div class="box">
+<h3>Exercício 2 — Montagem Parcial de DRE</h3>
+<p>Com base nos dados a seguir, monte a parte inicial da DRE:</p>
+<ul>
+<li>Receita Bruta: 200.000</li>
+<li>Deduções e Impostos: 20.000</li>
+<li>CMV: 120.000</li>
+</ul>
+<details><summary>Gabarito</summary>
+<ul>
+<li>Receita Líquida = 200.000 – 20.000 = <strong>180.000</strong></li>
+<li>Resultado Bruto = 180.000 – 120.000 = <strong>60.000</strong></li>
+</ul>
+</details>
+</div>
+<div class="box">
+<h3>Exercício 3 — Integração BP ↔ DRE</h3>
+<p>Após o lucro líquido de 18.000 apurado na DRE, como ficará o PL no BP considerando um PL inicial de 120.000?</p>
+<details><summary>Gabarito</summary>
+<p>PL final = 120.000 + 18.000 = <strong>138.000</strong></p>
+</details>
+</div>
+</section>
+</main>
+</section>
+</div>
+<script>
+    document.body.innerHTML = document.body.innerHTML.replaceAll('{year}', new Date().getFullYear());
+  </script>
+</body>
+</html>
