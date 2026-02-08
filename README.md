@@ -17,6 +17,13 @@ O objetivo deste espaço é oferecer aos estudantes um ambiente organizado, aces
 - Estudos de caso e exercícios aplicados
 - Montagem de demonstrativos contábeis a partir de fatos
 
+
+## 🔗 Acesso ao Repositório
+
+Todo o material desta unidade está disponível em:
+
+👉 **https://github.com/maxvallim/ContabilidadeAvancada**
+
 ---
 
 ## 🗂️ Estrutura do Repositório
