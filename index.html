@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contabilidade Avançada – Integração, MEP e Consolidação</title>
+  <meta name="description" content="Unidade de Estudos de Contabilidade Avançada: Integração de demonstrações contábeis, Método de Equivalência Patrimonial (MEP) e Consolidação de demonstrações contábeis." />
+  <style>
+    /* Base */
+    :root {
+      --bg: #ffffff;
+      --text: #111111;
+      --muted: #555555;
+      --line: #e6e6e6;
+      --maxw: 980px;
+      --space: 20px;
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.6;
+      font-size: 16px;
+    }
+    a { color: inherit; }
+    .container { max-width: var(--maxw); margin: 0 auto; padding: 0 16px; }
+
+    /* Cabeçalho simples */
+    header {
+      padding: 36px 0 24px;
+      border-bottom: 1px solid var(--line);
+    }
+    h1 {
+      font-size: clamp(24px, 4vw, 34px);
+      margin: 8px 0 6px;
+      line-height: 1.25;
+    }
+    .eyebrow {
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      font-size: 12px;
+      color: var(--muted);
+    }
+    .lead {
+      color: var(--muted);
+      margin: 8px 0 0;
+      max-width: 70ch;
+    }
+
+    /* Navegação âncora */
+    nav {
+      border-bottom: 1px solid var(--line);
+      background: #fff;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    .nav-list {
+      display: flex; gap: 16px; list-style: none; padding: 10px 0; margin: 0;
+      overflow-x: auto;
+    }
+    .nav-list a {
+      text-decoration: none;
+      padding: 6px 8px;
+      border-radius: 6px;
+      border: 1px solid transparent;
+    }
+    .nav-list a:focus, .nav-list a:hover {
+      border-color: var(--line);
+      outline: none;
+    }
+
+    /* Seções */
+    section { padding: 26px 0; }
+    .section-title { margin: 0 0 6px; font-size: 20px; }
+    .section-desc { color: var(--muted); margin: 0 0 14px; }
+
+    /* Grid simples (cards) */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 12px;
+    }
+    .card {
+      grid-column: span 4;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 14px;
+      background: #fff;
+    }
+    .card h3 { margin: 0 0 6px; font-size: 18px; }
+    .card p { margin: 0 0 8px; color: var(--muted); }
+    .card ul { margin: 8px 0 0 18px; padding: 0; }
+    .muted { color: var(--muted); }
+
+    /* Timeline */
+    .timeline { border-left: 2px solid var(--line); padding-left: 12px; margin-left: 4px; }
+    .tl-item { margin: 0 0 14px; }
+    .tl-item h4 { margin: 0 0 2px; font-size: 16px; }
+    .when { font-size: 14px; color: var(--muted); }
+
+    /* Listas simples */
+    .list { margin: 0; padding-left: 18px; }
+    .note {
+      border: 1px dashed var(--line);
+      border-radius: 8px; padding: 12px; color: var(--muted);
+      background: #fafafa;
+    }
+
+    /* Footer */
+    footer {
+      border-top: 1px solid var(--line);
+      padding: 20px 0 40px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    /* Responsivo */
+    @media (max-width: 980px) {
+      .card { grid-column: span 6; }
+    }
+    @media (max-width: 640px) {
+      .card { grid-column: span 12; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="container">
+      <div class="eyebrow">Unidade de Estudos</div>
+      <h1>Contabilidade Avançada: Integração, MEP e Consolidação</h1>
+      <p class="lead">
+        Conceitos, procedimentos e prática para integração de demonstrações contábeis, aplicação do Método da Equivalência Patrimonial (MEP) e consolidação de demonstrações.
+      </p>
+    </div>
+  </header>
+
+  <!-- Nav -->
+  <nav>
+    <div class="container">
+      <ul class="nav-list">
+        <li><a href="#conteudos">Conteúdos</a></li>
+        <li><a href="#trilha">Trilha</a></li>
+        <li><a href="#materiais">Materiais</a></li>
+        <li><a href="#faq">FAQ</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Conteúdos -->
+  <section id="conteudos">
+    <div class="container">
+      <h2 class="section-title">Conteúdos principais</h2>
+      <p class="section-desc">Estrutura direta para você localizar rapidamente o que precisa.</p>
+
+      <div class="grid">
+        <div class="card">
+          <h3>Integração de Demonstrações</h3>
+          <p>Uniformização de políticas, moeda funcional e eliminações de transações intra-grupo.</p>
+          <ul>
+            <li>Políticas contábeis e ajustes</li>
+            <li>Conversão de moeda</li>
+            <li>Eliminações de saldos e lucros não realizados</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>Método da Equivalência Patrimonial (MEP)</h3>
+          <p>Reconhecimento do investimento com base na variação do PL proporcional.</p>
+          <ul>
+            <li>Influência significativa</li>
+            <li>Resultado de equivalência</li>
+            <li>Dividendos, ágio e impairment</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>Consolidação de Demonstrações</h3>
+          <p>Combinação de negócios, goodwill, participação de não controladores (NCI) e divulgações.</p>
+          <ul>
+            <li>Data de aquisição e PPA</li>
+            <li>Goodwill e NCI</li>
+            <li>Eliminações e apresentação</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trilha -->
+  <section id="trilha">
+    <div class="container">
+      <h2 class="section-title">Trilha de estudos</h2>
+      <p class="section-desc">Sugestão simples de sequência.</p>
+
+      <div class="grid">
+        <div class="card" style="grid-column: span 6;">
+          <h3>Sequência</h3>
+          <div class="timeline">
+            <div class="tl-item">
+              <h4>1) Integração</h4>
+              <div class="when">Semana 1</div>
+              <p class="muted">Uniformização, conversão e eliminações básicas.</p>
+            </div>
+            <div class="tl-item">
+              <h4>2) MEP</h4>
+              <div class="when">Semanas 2–3</div>
+              <p class="muted">Critérios, reconhecimento de resultado e dividendos.</p>
+            </div>
+            <div class="tl-item">
+              <h4>3) Consolidação</h4>
+              <div class="when">Semanas 4–5</div>
+              <p class="muted">PPA, goodwill, NCI e eliminações avançadas.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="card" style="grid-column: span 6;">
+          <h3>Avaliações</h3>
+          <ul class="list">
+            <li>Estudo de Caso 1: Integração e eliminações</li>
+            <li>Estudo de Caso 2: MEP (dividendos e impairment)</li>
+            <li>Projeto Final: Consolidação completa</li>
+          </ul>
+          <p class="muted">Critérios: acurácia técnica, reconciliações e apresentação.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Materiais -->
+  <section id="materiais">
+    <div class="container">
+      <h2 class="section-title">Materiais</h2>
+      <p class="section-desc">Substitua pelos seus arquivos/links reais.</p>
+
+      <div class="grid">
+        <div class="card">
+          <h3>Slides</h3>
+          <ul class="list">
+            <li><a href="slides/01-integracao.pdf">Integração de Demonstrações (PDF)</a></li>
+            <li><a href="slides/02-mep.pdf">MEP: Conceitos e Aplicações (PDF)</a></li>
+            <li><a href="slides/03-consolidacao.pdf">Consolidação: Passo a Passo (PDF)</a></li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>Planilhas</h3>
+          <ul class="list">
+            <li><a href="planilhas/estudo-caso-integracao.xlsx">Estudo de Caso – Integração</a></li>
+            <li><a href="planilhas/mep-dividendos-impairment.xlsx">MEP – Dividendos & Impairment</a></li>
+            <li><a href="planilhas/consolidacao-completa.xlsx">Consolidação Completa</a></li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>Referências</h3>
+          <ul class="list">
+            <li><a href="https://www.cpc.org.br/CPC/Documentos-Emitidos/Documentos-Emitidos-por-Assunto" target="_blank" rel="noopener">CPC – Documentos por Assunto</a></li>
+            <li><a href="https://www.ifrs.org/issued-standards/list-of-standards/" target="_blank" rel="noopener">IFRS – Lista de Normas</a></li>
+            <li><a href="https://static.cpc.mediagroup.com.br/Documentos/427_CPC_18_R2_rev%2008_2023.pdf" target="_blank" rel="noopener">CPC 18 (R2) – Equivalência Patrimonial</a></li>
+            <li><a href="https://static.cpc.mediagroup.com.br/Documentos/487_CPC_36_R3_rev%2007_2023.pdf" target="_blank" rel="noopener">CPC 36 (R3) – Demonstrações Consolidadas</a></li>
+            <li><a href="https://static.cpc.mediagroup.com.br/Documentos/461_CPC_15_R1_rev%2005_2023.pdf" target="_blank" rel="noopener">CPC 15 (R1) – Combinação de Negócios</a></li>
+          </ul>
+        </div>
+
+        <div class="card" style="grid-column: span 12;">
+          <p class="note">
+            Observação: publique apenas materiais permitidos para acesso público.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq">
+    <div class="container">
+      <h2 class="section-title">FAQ</h2>
+      <div class="grid">
+        <div class="card" style="grid-column: span 12;">
+          <h3>Perguntas frequentes</h3>
+          <details>
+            <summary>Dividendos recebidos reduzem o investimento pelo MEP?</summary>
+            <p>Sim. O investimento é ajustado pelo resultado proporcional e reduzido por dividendos declarados pela investida.</p>
+          </details>
+          <details>
+            <summary>Goodwill é amortizado na consolidação?</summary>
+            <p>Não. O goodwill não é amortizado; é submetido a teste de recuperabilidade (impairment).</p>
+          </details>
+          <details>
+            <summary>O que deve ser eliminado na consolidação?</summary>
+            <p>Saldos/transações intra-grupo, lucros não realizados e investimento x PL da controlada.</p>
+          </details>
+          <details>
+            <summary>Quando usar MEP e quando consolidar?</summary>
+            <p>MEP: coligadas (influência significativa) e, às vezes, joint ventures. Consolidação: quando há controle.</p>
+          </details>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div style="display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap;">
+        <div>© <span id="year"></span> Contabilidade Avançada</div>
+        <div>Autor: <strong>Max Vallim</strong></div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Inserir ano atual
