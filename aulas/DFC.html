@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+
+<html lang="pt-br">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Ciências Contábeis · Demonstração dos Fluxos de Caixa (DFC)</title>
+<style>
+ :root{
+  --bg:#ffffff; 
+  --fg:#0a0a0a; 
+  --muted:#444; 
+  --line:#e6e6e6; 
+  --box:#fafafa;
+ }
+
+ *{box-sizing:border-box}
+
+ body{
+   margin:0;
+   background:var(--bg);
+   color:var(--fg);
+   font-family:Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+   line-height:1.7;
+ }
+
+ .wrap{
+   max-width:1000px;
+   margin:0 auto;
+   padding:32px 22px 80px;
+ }
+
+ header{
+   display:flex;
+   align-items:center;
+   gap:18px;
+   padding:10px 0 26px;
+   border-bottom:1px solid var(--line);
+   margin-bottom:26px;
+ }
+
+ .brand{
+   width:54px;
+   height:54px;
+   display:grid;
+   place-items:center;
+   border:1px solid var(--line);
+   border-radius:8px;
+   background:#fff;
+ }
+
+ .brand svg{
+   width:28px;
+   height:28px;
+ }
+
+ .head h1{
+   font-weight:600; 
+   font-size:1.9rem;
+   margin:2px 0 4px;
+   color:#111;
+ }
+
+ .head .meta{
+   color:var(--muted);
+   font-size:.97rem;
+ }
+
+ .subtitle{
+   margin-top:4px;
+   color:#222;
+ }
+
+ h2{
+   font-weight:600;
+   font-size:1.55rem;
+   margin:40px 0 10px;
+   color:#111;
+ }
+
+ h3{
+   font-weight:600;
+   font-size:1.08rem;
+   margin:24px 0 10px;
+   color:#222;
+ }
+
+ p{
+   font-size:1.06rem;
+   margin:10px 0 14px;
+ }
+
+ ul{
+   padding-left:1.1rem;
+   margin:2px 0 18px;
+ }
+
+ li{
+   margin:6px 0;
+ }
+
+ .box{
+   border:1px solid var(--line);
+   background:var(--box);
+   padding:18px;
+   border-radius:10px;
+   margin:14px 0;
+ }
+
+ .callout{
+   border:1px solid #efefef;
+   background:linear-gradient(180deg,#fff,#f9f9f9);
+   padding:20px;
+   border-radius:12px;
+   margin-bottom:14px;
+ }
+
+ .equation{
+   font-family:ui-monospace,Consolas,monospace;
+   background:#fff;
+   border:1px solid var(--line);
+   padding:10px 12px;
+   border-radius:10px;
+   display:inline-block;
+   font-size:1rem;
+   color:#111;
+   margin:12px 0;
+ }
+
+ .grid{
+   display:grid;
+   gap:14px;
+   margin:10px 0 20px;
+ }
+
+ @media(min-width:820px){
+   .grid.cols-2{
+     grid-template-columns:1fr 1fr;
+   }
+ }
+
+ .table{
+   width:100%;
+   border-collapse:separate;
+   border-spacing:0;
+   margin:10px 0 12px;
+   font-size:1rem;
+ }
+
+ .table th,.table td{
+   padding:10px 12px;
+   border-bottom:1px solid var(--line);
+ }
+
+ .table thead th{
+   font-weight:700;
+   text-align:left;
+   color:#111;
+   border-bottom:1px solid #ddd;
+ }
+
+ .foot{
+   margin-top:38px;
+   color:var(--muted);
+   font-size:.92rem;
+   text-align:center;
+ }
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+<div aria-hidden="true" class="brand">
+<svg aria-hidden="true" fill="none" stroke="#111" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" viewbox="0 0 24 24">
+<path d="M4 18 V6 L8 12 L12 6 V18"></path>
+<path d="M13 18 V6 L17 12 L21 6 V18"></path>
+</svg>
+</div>
+<div class="head">
+<h1>Ciências Contábeis · Demonstração dos Fluxos de Caixa (DFC)</h1>
+<div class="meta">Prof. Max Vallim · {year}</div>
+<div class="subtitle">Estrutura, lógica, métodos (Direto e Indireto), exemplos e exercícios práticos.</div>
+</div>
+</header>
+<!-- ===========================
+          1. ESSÊNCIA
+=========================== -->
+<section id="essencia">
+<h2>1. Essência da DFC</h2>
+<p>A DFC mostra todas as <strong>entradas</strong> e <strong>saídas</strong> de caixa e equivalentes, explicando como o caixa variou entre o início e o fim do período.</p>
+<p class="equation">Variação do Caixa = Caixa Final – Caixa Inicial</p><div class="callout"><h3>Equação Estrutural do Caixa (a partir do BP)</h3><p>Esta relação expressa o caixa como o “resíduo” do Balanço, conectando diretamente o BP à DFC:</p><p class="equation">Caixa = OAC + ANC − PC − PNC − PL</p><p class="equation">Δ Caixa = Δ OAC + Δ ANC − Δ PC − Δ PNC − Δ PL</p><div class="box"><h3>Mini Exercício — Interpretação da Equação Estrutural</h3><ul><li>Se o Estoque aumenta 12.000, o efeito esperado no caixa é…</li><li>Se Fornecedores aumenta 8.000, o efeito esperado no caixa é…</li><li>Se o Imobilizado aumenta 20.000, o efeito esperado no caixa é…</li></ul><details><summary>Gabarito</summary><ul><li>Estoque (ativo circulante) ↑ 12.000 → **consome caixa** → Δ Caixa **negativa**</li><li>Fornecedores (passivo circulante) ↑ 8.000 → **gera caixa** → Δ Caixa **positiva**</li><li>Imobilizado (ativo não circulante) ↑ 20.000 → **consome caixa** → Δ Caixa **negativa**</li></ul></details></div></div>
+<p>A DFC é dividida em três blocos:</p>
+<ul>
+<li><strong>FCO</strong> — Fluxos das Atividades Operacionais</li>
+<li><strong>FCI</strong> — Fluxos das Atividades de Investimento</li>
+<li><strong>FCF</strong> — Fluxos das Atividades de Financiamento</li>
+</ul>
+</section>
+<!-- ===========================
+       2. MÉTODOS
+=========================== -->
+<section id="metodos">
+<h2>2. Métodos de Apresentação</h2>
+<div class="grid cols-2">
+<div class="callout">
+<h3>Método Direto</h3>
+<ul>
+<li>Mostra recebimentos e pagamentos diretamente.</li>
+<li>Mais intuitivo.</li>
+<li>Requer maior detalhamento interno.</li>
+</ul>
+</div>
+<div class="callout">
+<h3>Método Indireto</h3>
+<ul>
+<li>Parte do Lucro Líquido.</li>
+<li>Ajusta itens não caixa.</li>
+<li>Reverte efeitos do regime de competência.</li>
+</ul>
+</div>
+</div>
+</section>
+<!-- ===========================
+       3. ESTRUTURA
+=========================== -->
+<section id="estrutura">
+<h2>3. Estrutura da DFC</h2>
+<div class="grid cols-2">
+<div class="box">
+<h3>Fluxos Operacionais (FCO)</h3>
+<ul>
+<li>Recebimentos de clientes</li>
+<li>Pagamentos a fornecedores</li>
+<li>Despesas operacionais</li>
+<li>Tributos pagos</li>
+<li>Ajustes de provisões (no método indireto)</li>
+</ul>
+</div>
+<div class="box">
+<h3>Fluxos de Investimento (FCI)</h3>
+<ul>
+<li>Compra e venda de imobilizado</li>
+<li>Investimentos financeiros</li>
+<li>Aquisição de participações</li>
+</ul>
+</div>
+<div class="box">
+<h3>Fluxos de Financiamento (FCF)</h3>
+<ul>
+<li>Empréstimos obtidos</li>
+<li>Amortização de dívidas</li>
+<li>Aportes de sócios</li>
+<li>Distribuição de dividendos</li>
+</ul>
+</div>
+</div>
+</section>
+<!-- ===========================
+       4. EXEMPLO — DIRETO
+=========================== -->
+<section id="exemplo-direto">
+<h2>4. Exemplo – Método Direto</h2>
+<p>Dados:</p>
+<ul>
+<li>Recebimentos: 180.000</li>
+<li>Fornecedores: (120.000)</li>
+<li>Despesas: (30.000)</li>
+<li>Impostos: (10.000)</li>
+</ul>
+<div class="box">
+<table class="table">
+<tbody>
+<tr><td>Recebido de Clientes</td><td>180.000</td></tr>
+<tr><td>(–) Pagamentos a Fornecedores</td><td>(120.000)</td></tr>
+<tr><td>(–) Despesas Operacionais</td><td>(30.000)</td></tr>
+<tr><td>(–) Tributos</td><td>(10.000)</td></tr>
+<tr><td><strong>= Caixa Líquido FCO</strong></td><td><strong>20.000</strong></td></tr>
+</tbody>
+</table>
+</div>
+</section>
+<!-- ===========================
+       5. EXEMPLO — INDIRETO
+=========================== -->
+<section id="exemplo-indireto">
+<h2>5. Exemplo – Método Indireto</h2>
+<p>Dados:</p>
+<ul>
+<li>Lucro Líquido: 25.000</li>
+<li>Depreciação: 8.000</li>
+<li>Aumento Clientes: (5.000)</li>
+<li>Redução Estoques: +6.000</li>
+<li>Aumento Fornecedores: +4.000</li>
+</ul>
+<div class="box">
+<table class="table">
+<tbody>
+<tr><td>Lucro Líquido</td><td>25.000</td></tr>
+<tr><td>(+) Depreciação</td><td>8.000</td></tr>
+<tr><td>(–) Aumento em Clientes</td><td>(5.000)</td></tr>
+<tr><td>(+) Redução em Estoques</td><td>6.000</td></tr>
+<tr><td>(+) Aumento em Fornecedores</td><td>4.000</td></tr>
+<tr><td><strong>= Caixa Líquido FCO</strong></td><td><strong>38.000</strong></td></tr>
+</tbody>
+</table>
+</div>
+</section>
+<!-- ===========================
+       6. PONTE
+=========================== -->
+<section id="ponte">
+<h2>6. Ponte entre DRE, BP e DFC</h2>
+<div class="box">
+<p><strong>A DFC conecta regime de competência (DRE) com regime de caixa (BP).</strong></p>
+<p class="equation">Δ Caixa = FCO + FCI + FCF</p>
+<p>Todos os itens não caixa (depreciação, provisões, equivalência patrimonial) são revertidos para aproximar o lucro do caixa real.</p>
+</div>
+</section>
+<!-- ===========================
+       7. EXERCÍCIOS
+=========================== -->
+<section id="exercicios">
+<h2>7. Exercícios Práticos</h2>
+<div class="box">
+<h3>Exercício 1 – Classificação</h3>
+<p>Classifique em FCO, FCI ou FCF:</p>
+<ul>
+<li>Pagamento de fornecedores</li>
+<li>Venda de imobilizado</li>
+<li>Aporte de capital</li>
+<li>Impostos pagos</li>
+<li>Compra de máquina</li>
+</ul>
+<details><summary>Gabarito</summary>
+<ul>
+<li>FCO</li>
+<li>FCI</li>
+<li>FCF</li>
+<li>FCO</li>
+<li>FCI</li>
+</ul>
+</details>
+</div>
+<div class="box">
+<h3>Exercício 2 – Método Direto</h3>
+<ul>
+<li>Recebimentos: 90.000</li>
+<li>Fornecedores: (55.000)</li>
+<li>Despesas: (12.000)</li>
+<li>Impostos: (3.000)</li>
+</ul>
+<details><summary>Gabarito</summary>
+<p>Caixa Líquido = <strong>20.000</strong></p>
+</details>
+</div>
+<div class="box">
+<h3>Exercício 3 – Método Indireto</h3>
+<ul>
+<li>Lucro Líquido: 18.000</li>
+<li>Depreciação: 6.000</li>
+<li>Aumento Estoques: (4.000)</li>
+<li>Redução Fornecedores: (2.000)</li>
+</ul>
+<details><summary>Gabarito</summary>
+<p>FCO = 18.000 + 6.000 – 4.000 – 2.000 = <strong>18.000</strong></p>
+</details>
+</div>
+</section>
+<p class="foot">© {year} · Prof. Max Vallim · Ciências Contábeis</p>
+</div>
+<script>
+document.body.innerHTML =
+ document.body.innerHTML.replaceAll('{year}', new Date().getFullYear());
+</script>
+</body>
+</html>
