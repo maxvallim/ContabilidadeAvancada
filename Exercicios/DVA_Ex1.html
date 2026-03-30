@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Ciências Contábeis · Casos Práticos de DVA</title>
+
+<style>
+:root{
+  --bg:#ffffff;
+  --fg:#0a0a0a;
+  --muted:#444;
+  --line:#e6e6e6;
+  --box:#fafafa;
+}
+
+*{box-sizing:border-box}
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--fg);
+  font-family:Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  line-height:1.7;
+}
+.wrap{
+  max-width:1000px;
+  margin:0 auto;
+  padding:32px 22px 80px;
+}
+header{
+  display:flex;
+  align-items:center;
+  gap:18px;
+  padding:10px 0 26px;
+  border-bottom:1px solid var(--line);
+  margin-bottom:26px;
+}
+.brand{
+  width:54px;height:54px;
+  display:grid;place-items:center;
+  border:1px solid var(--line);
+  border-radius:8px;
+  background:#fff;
+}
+.brand svg{width:28px;height:28px}
+.head h1{
+  font-weight:600;
+  font-size:1.9rem;
+  margin:2px 0 4px;
+  color:#111;
+}
+.head .meta{
+  color:var(--muted);
+  font-size:.97rem;
+}
+h2{
+  font-weight:600;
+  font-size:1.55rem;
+  margin:40px 0 10px;
+  color:#111;
+}
+h3{
+  font-weight:600;
+  font-size:1.18rem;
+  margin:24px 0 10px;
+  color:#222;
+}
+p{
+  font-size:1.06rem;
+  margin:10px 0 14px;
+}
+ul{padding-left:1.1rem;margin:2px 0 18px;}
+li{margin:6px 0}
+.box{
+  border:1px solid var(--line);
+  background:var(--box);
+  padding:18px;
+  border-radius:10px;
+  margin:16px 0;
+}
+.grid{display:grid;gap:14px;margin:10px 0 20px}
+@media(min-width:820px){
+  .cols-2{grid-template-columns:1fr 1fr}
+}
+.table{
+  width:100%;
+  border-collapse:separate;
+  border-spacing:0;
+  margin:10px 0 12px;
+  font-size:1rem;
+}
+.table th,.table td{
+  padding:10px 12px;
+  border-bottom:1px solid var(--line);
+}
+.table thead th{
+  font-weight:700;
+  text-align:left;
+  color:#111;
+  border-bottom:1px solid #ddd;
+}
+</style>
+</head>
+
+<body>
+<div class="wrap">
+
+<header>
+<div class="brand">
+  <svg aria-hidden="true" fill="none" stroke="#111" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" viewBox="0 0 24 24">
+    <path d="M4 18 V6 L8 12 L12 6 V18"></path>
+    <path d="M13 18 V6 L17 12 L21 6 V18"></path>
+  </svg>
+</div>
+
+<div class="head">
+  <h1>Casos Práticos · Demonstração do Valor Adicionado (DVA)</h1>
+  <div class="meta">Prof. Max Vallim · {year}</div>
+  <div class="subtitle">Aplicação prática da DVA a partir de demonstrações contábeis reais de dois períodos.</div>
+</div>
+</header>
+
+<!-- =============================================
+CASO 1
+============================================= -->
+<section id="caso1">
+<h2>Caso 1 — Indústria Metalúrgica Alfa S/A</h2>
+
+<p>Empresa industrial de médio porte, intensiva em mão de obra e com uso moderado de capital de terceiros.</p>
+
+<div class="box">
+<h3>Demonstrações — Ano 1</h3>
+
+<table class="table">
+<thead><tr><th>Descrição</th><th>Valor (R$)</th></tr></thead>
+<tbody>
+<tr><td>Receita Líquida</td><td>4.800.000</td></tr>
+<tr><td>Insumos de Terceiros</td><td>(2.100.000)</td></tr>
+<tr><td>Pessoal</td><td>(1.280.000)</td></tr>
+<tr><td>Depreciação</td><td>(160.000)</td></tr>
+<tr><td>Juros Pagos</td><td>(210.000)</td></tr>
+<tr><td>IR/CSLL</td><td>(340.000)</td></tr>
+<tr><td>Lucro Líquido</td><td>710.000</td></tr>
+<tr><td>Transferências Recebidas</td><td>58.000</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="box">
+<h3>Demonstrações — Ano 2</h3>
+
+<table class="table">
+<thead><tr><th>Descrição</th><th>Valor (R$)</th></tr></thead>
+<tbody>
+<tr><td>Receita Líquida</td><td>5.300.000</td></tr>
+<tr><td>Insumos de Terceiros</td><td>(2.350.000)</td></tr>
+<tr><td>Pessoal</td><td>(1.440.000)</td></tr>
+<tr><td>Depreciação</td><td>(180.000)</td></tr>
+<tr><td>Juros Pagos</td><td>(190.000)</td></tr>
+<tr><td>IR/CSLL</td><td>(398.000)</td></tr>
+<tr><td>Lucro Líquido</td><td>742.000</td></tr>
+<tr><td>Transferências Recebidas</td><td>64.000</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="box">
+<h3>Tarefas</h3>
+<ul>
+  <li>Calcular o Valor Adicionado Bruto (VAB) e Total (VAT) nos dois períodos.</li>
+  <li>Montar a distribuição: pessoal, governo, capital de terceiros, capital próprio (25% de dividendos) e lucros retidos.</li>
+  <li>Analisar evolução: carga tributária, mão de obra e dependência de capital de terceiros.</li>
+</ul>
+</div>
+</section>
+
+<!-- =============================================
+CASO 2
+============================================= -->
+<section id="caso2">
+<h2>Caso 2 — Varejista Solaris Comércio Ltda.</h2>
+
+<p>Empresa varejista com alto giro e forte pressão de fornecedores.</p>
+
+<div class="box">
+<h3>Demonstrações — Ano 1</h3>
+
+<table class="table">
+<thead><tr><th>Descrição</th><th>Valor (R$)</th></tr></thead>
+<tbody>
+<tr><td>Receita Líquida</td><td>9.900.000</td></tr>
+<tr><td>Insumos de Terceiros</td><td>(8.020.000)</td></tr>
+<tr><td>Pessoal</td><td>(940.000)</td></tr>
+<tr><td>Depreciação</td><td>(110.000)</td></tr>
+<tr><td>Juros Pagos</td><td>(96.000)</td></tr>
+<tr><td>IR/CSLL</td><td>(210.000)</td></tr>
+<tr><td>Lucro Líquido</td><td>524.000</td></tr>
+<tr><td>Transferências Recebidas</td><td>70.000</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="box">
+<h3>Demonstrações — Ano 2</h3>
+
+<table class="table">
+<thead><tr><th>Descrição</th><th>Valor (R$)</th></tr></thead>
+<tbody>
+<tr><td>Receita Líquida</td><td>10.800.000</td></tr>
+<tr><td>Insumos de Terceiros</td><td>(8.900.000)</td></tr>
+<tr><td>Pessoal</td><td>(1.020.000)</td></tr>
+<tr><td>Depreciação</td><td>(130.000)</td></tr>
+<tr><td>Juros Pagos</td><td>(112.000)</td></tr>
+<tr><td>IR/CSLL</td><td>(240.000)</td></tr>
+<tr><td>Lucro Líquido</td><td>398.000</td></tr>
+<tr><td>Transferências Recebidas</td><td>76.000</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="box">
+<h3>Tarefas</h3>
+<ul>
+  <li>Calcular GVA e VAT dos dois anos.</li>
+  <li>Distribuir o valor adicionado, usando 25% do lucro como dividendos.</li>
+  <li>Analisar o impacto do aumento dos insumos no valor adicionado.</li>
+  <li>Discutir por que o VAT pode aumentar mesmo com queda no lucro.</li>
+</ul>
+</div>
+</section>
+
+<!-- =============================================
+CASO 3
+============================================= -->
+<section id="caso3">
+<h2>Caso 3 — TechWave Desenvolvimento de Software S/A</h2>
+
+<p>Empresa de software, intensiva em mão de obra e com tendência a alta retenção para reinvestimento.</p>
+
+<div class="box">
+<h3>Demonstrações — Ano 1</h3>
+
+<table class="table">
+<thead><tr><th>Descrição</th><th>Valor (R$)</th></tr></thead>
+<tbody>
+<tr><td>Receita Líquida</td><td>3.200.000</td></tr>
+<tr><td>Insumos de Terceiros</td><td>(540.000)</td></tr>
+<tr><td>Pessoal</td><td>(1.620.000)</td></tr>
+<tr><td>Depreciação/Amortização</td><td>(90.000)</td></tr>
+<tr><td>Juros Pagos</td><td>(20.000)</td></tr>
+<tr><td>IR/CSLL</td><td>(110.000)</td></tr>
+<tr><td>Lucro Líquido</td><td>820.000</td></tr>
+<tr><td>Transferências Recebidas</td><td>70.000</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="box">
+<h3>Demonstrações — Ano 2</h3>
+
+<table class="table">
+<thead><tr><th>Descrição</th><th>Valor (R$)</th></tr></thead>
+<tbody>
+<tr><td>Receita Líquida</td><td>4.050.000</td></tr>
+<tr><td>Insumos de Terceiros</td><td>(660.000)</td></tr>
+<tr><td>Pessoal</td><td>(1.980.000)</td></tr>
+<tr><td>Depreciação/Amortização</td><td>(120.000)</td></tr>
+<tr><td>Juros Pagos</td><td>(22.000)</td></tr>
+<tr><td>IR/CSLL</td><td>(148.000)</td></tr>
+<tr><td>Lucro Líquido</td><td>1.120.000</td></tr>
+<tr><td>Transferências Recebidas</td><td>90.000</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="box">
+<h3>Tarefas</h3>
+<ul>
+  <li>Produzir a DVA dos dois anos.</li>
+  <li>Calcular a participação percentual de cada grupo na distribuição.</li>
+  <li>Comparar intensidade de mão de obra entre Ano 1 e Ano 2.</li>
+  <li>Analisar se a empresa está retendo riqueza suficiente para expansão.</li>
+</ul>
+</div>
+</section>
+
+</div>
+
+<script>
+document.body.innerHTML =
+  document.body.innerHTML.replaceAll('{year}', new Date().getFullYear());
+</script>
+
+</body>
+</html>
