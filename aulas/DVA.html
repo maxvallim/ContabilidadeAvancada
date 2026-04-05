@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Ciências Contábeis · Demonstração do Valor Adicionado (DVA)</title>
+
+<style>
+:root{
+  --bg:#ffffff;
+  --fg:#0a0a0a;
+  --muted:#444;
+  --line:#e6e6e6;
+  --box:#fafafa;
+}
+*{box-sizing:border-box}
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--fg);
+  font-family:Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  line-height:1.7;
+}
+.wrap{
+  max-width:1000px;
+  margin:0 auto;
+  padding:32px 22px 80px;
+}
+header{
+  display:flex;
+  align-items:center;
+  gap:18px;
+  padding:10px 0 26px;
+  border-bottom:1px solid var(--line);
+  margin-bottom:26px;
+}
+.brand{
+  width:54px;height:54px;
+  display:grid;place-items:center;
+  border:1px solid var(--line);
+  border-radius:8px;
+  background:#fff;
+}
+.brand svg{width:28px;height:28px}
+.head h1{
+  font-weight:600;
+  font-size:1.9rem;
+  margin:2px 0 4px;
+  color:#111;
+}
+.head .meta{
+  color:var(--muted);
+  font-size:.97rem;
+}
+.subtitle{
+  margin-top:4px;
+  color:#222;
+}
+h2{
+  font-weight:600;
+  font-size:1.55rem;
+  margin:40px 0 10px;
+  color:#111;
+}
+h3{
+  font-weight:600;
+  font-size:1.08rem;
+  margin:24px 0 10px;
+  color:#222;
+}
+p{
+  font-size:1.06rem;
+  margin:10px 0 14px;
+}
+ul{
+  padding-left:1.1rem;
+  margin:2px 0 18px;
+}
+li{margin:6px 0}
+.box{
+  border:1px solid var(--line);
+  background:var(--box);
+  padding:18px;
+  border-radius:10px;
+  margin:14px 0;
+}
+.callout{
+  border:1px solid #efefef;
+  background:linear-gradient(180deg,#fff,#f9f9f9);
+  padding:20px;
+  border-radius:12px;
+  margin-bottom:14px;
+}
+.equation{
+  font-family:ui-monospace,Consolas,monospace;
+  background:#fff;
+  border:1px solid var(--line);
+  padding:10px 12px;
+  border-radius:10px;
+  display:inline-block;
+  font-size:1rem;
+  color:#111;
+  margin:12px 0;
+}
+.grid{display:grid;gap:14px;margin:10px 0 20px}
+@media(min-width:820px){
+  .grid.cols-2{grid-template-columns:1fr 1fr}
+}
+.table{
+  width:100%;
+  border-collapse:separate;
+  border-spacing:0;
+  margin:10px 0 12px;
+  font-size:1rem;
+}
+.table th,.table td{
+  padding:10px 12px;
+  border-bottom:1px solid var(--line);
+}
+.table thead th{
+  font-weight:700;
+  text-align:left;
+  color:#111;
+  border-bottom:1px solid #ddd;
+}
+.foot{
+  margin-top:38px;
+  color:var(--muted);
+  font-size:.92rem;
+  text-align:center;
+}
+</style>
+</head>
+
+<body>
+<div class="wrap">
+
+<header>
+<div class="brand">
+  <svg aria-hidden="true" fill="none" stroke="#111" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" viewBox="0 0 24 24">
+    <path d="M4 18 V6 L8 12 L12 6 V18"></path>
+    <path d="M13 18 V6 L17 12 L21 6 V18"></path>
+  </svg>
+</div>
+<div class="head">
+  <h1>Ciências Contábeis · Demonstração do Valor Adicionado (DVA)</h1>
+  <div class="meta">Prof. Max Vallim · {year}</div>
+  <div class="subtitle">Estrutura, lógica, finalidade social e integração com DRE, BP e DFC.</div>
+</div>
+</header>
+
+<!-- =====================================================
+1. ESSÊNCIA DA DVA
+===================================================== -->
+<section id="essencia">
+<h2>1. Essência da DVA</h2>
+
+<p>A Demonstração do Valor Adicionado (DVA) evidencia <strong>a riqueza criada pela empresa</strong> e <strong>a forma como essa riqueza foi distribuída</strong> aos diversos agentes econômicos: empregados, governo, financiadores, acionistas e retenção para reinvestimento.</p>
+
+<div class="callout">
+  <h3>O que a DVA responde?</h3>
+  <ul>
+    <li>Quanta riqueza a atividade da empresa gerou?</li>
+    <li>Para quem essa riqueza foi distribuída?</li>
+    <li>Quanto ficou retido para expansão da empresa?</li>
+  </ul>
+</div>
+
+<p>É uma demonstração de foco <strong>socioeconômico</strong>, exigida para companhias abertas, mas amplamente utilizada também em estudos de produtividade, impacto social e ESG (Environmental, Social and Governance).</p>
+
+<p class="equation">
+Valor Adicionado = Receita Líquida − Insumos de Terceiros + Valor Adicionado Recebido em Transferência
+</p>
+
+</section>
+
+<!-- =====================================================
+2. ESTRUTURA
+===================================================== -->
+<section id="estrutura">
+<h2>2. Estrutura da DVA</h2>
+
+<div class="grid cols-2">
+
+<div class="callout">
+<h3>A) Geração do Valor Adicionado</h3>
+<ul>
+  <li>Receita Líquida</li>
+  <li>(–) Insumos adquiridos de terceiros</li>
+  <li>(=) Valor Adicionado Bruto</li>
+  <li>(+) Valor Adicionado Recebido em Transferência</li>
+</ul>
+</div>
+
+<div class="callout">
+<h3>B) Distribuição do Valor Adicionado</h3>
+<ul>
+  <li>Pessoal e encargos</li>
+  <li>Impostos, taxas e contribuições</li>
+  <li>Remuneração do capital de terceiros</li>
+  <li>Remuneração do capital próprio</li>
+  <li>Lucros retidos / prejuízo do exercício</li>
+</ul>
+</div>
+
+</div>
+</section>
+
+<!-- =====================================================
+3. INTEGRAÇÃO COM BP, DRE, DFC
+===================================================== -->
+<section id="integracao">
+<h2>3. Integração da DVA com as demais demonstrações</h2>
+
+<div class="box">
+<h3>DVA ↔ DRE</h3>
+<ul>
+  <li>A DVA parte da <strong>Receita Líquida da DRE</strong>.</li>
+  <li>Usa praticamente os mesmos insumos operacionais.</li>
+  <li>Mostra distribuição de lucro (dividendos/JSCP).</li>
+  <li>Ao contrário da DRE, pode haver valor adicionado positivo mesmo com prejuízo.</li>
+</ul>
+</div>
+
+<div class="box">
+<h3>DVA ↔ DFC</h3>
+<ul>
+  <li>A DVA mostra riqueza; a DFC mostra caixa.</li>
+  <li>Juros pagos aparecem na DVA como distribuição ao capital de terceiros.</li>
+  <li>Dividendos aparecem na DVA, mas na DFC (método indireto) só quando pagos.</li>
+</ul>
+</div>
+
+<div class="box">
+<h3>DVA ↔ BP</h3>
+<ul>
+  <li>Lucros retidos (parte final da DVA) aparecem no PL.</li>
+  <li>A distribuição evidencia o papel da empresa na sociedade antes da apropriação patrimonial.</li>
+</ul>
+</div>
+
+</section>
+
+<!-- =====================================================
+4. EXEMPLO COMPLETO
+===================================================== -->
+<section id="exemplo">
+<h2>4. Exemplo de DVA (simplificada)</h2>
+
+<div class="box">
+<table class="table">
+<thead>
+<tr><th>Descrição</th><th>Valor (R$)</th></tr>
+</thead>
+<tbody>
+<tr><td>Receita Líquida</td><td>500.000</td></tr>
+<tr><td>(–) Insumos de Terceiros</td><td>(200.000)</td></tr>
+<tr><td><strong>= Valor Adicionado Bruto</strong></td><td><strong>300.000</strong></td></tr>
+<tr><td>(+) Valor Recebido em Transferência</td><td>20.000</td></tr>
+<tr><td><strong>= Valor Adicionado Total</strong></td><td><strong>320.000</strong></td></tr>
+<tr><td>Pessoal</td><td>(160.000)</td></tr>
+<tr><td>Governos</td><td>(80.000)</td></tr>
+<tr><td>Capital de Terceiros (juros)</td><td>(40.000)</td></tr>
+<tr><td>Capital Próprio (dividendos)</td><td>(16.000)</td></tr>
+<tr><td><strong>Lucros Retidos</strong></td><td><strong>24.000</strong></td></tr>
+</tbody>
+</table>
+</div>
+
+</section>
+
+<!-- =====================================================
+5. LEITURA E INTERPRETAÇÃO
+===================================================== -->
+<section id="interpretacao">
+<h2>5. Leitura e Interpretação</h2>
+
+<div class="grid cols-2">
+
+<div class="callout">
+<h3>Indicadores úteis</h3>
+<ul>
+  <li>Participação dos empregados na riqueza</li>
+  <li>Peso dos tributos</li>
+  <li>Dependência de capital de terceiros</li>
+  <li>Retenção para crescimento</li>
+</ul>
+</div>
+
+<div class="callout">
+<h3>Tipos de empresa</h3>
+<ul>
+  <li><strong>Mão de obra intensiva:</strong> elevado % ao pessoal</li>
+  <li><strong>Endividada:</strong> maior % aos financiadores</li>
+  <li><strong>Inovadora:</strong> tendência a maior retenção</li>
+</ul>
+</div>
+
+</div>
+
+</section>
+
+<!-- =====================================================
+6. EXERCÍCIOS
+===================================================== -->
+<section id="exercicios">
+<h2>6. Exercícios Práticos</h2>
+
+<div class="box">
+<h3>Exercício 1 — Classificação</h3>
+<p>Classifique os itens abaixo em: GVA (geração) ou Distribuição.</p>
+<ul>
+  <li>Juros recebidos</li>
+  <li>Pessoal</li>
+  <li>Fornecedores (insumos)</li>
+  <li>Dividendos</li>
+  <li>Impostos</li>
+</ul>
+<details><summary>Gabarito</summary>
+<ul>
+  <li>Juros recebidos — GVA (transferência)</li>
+  <li>Pessoal — Distribuição</li>
+  <li>Insumos de terceiros — GVA</li>
+  <li>Dividendos — Distribuição</li>
+  <li>Impostos — Distribuição</li>
+</ul>
+</details>
+</div>
+
+<div class="box">
+<h3>Exercício 2 — Cálculo do Valor Adicionado</h3>
+<ul>
+  <li>Receita Líquida: 300.000</li>
+  <li>Insumos de terceiros: 120.000</li>
+  <li>Transferências: 10.000</li>
+</ul>
+<details><summary>Gabarito</summary>
+<p>Valor Adicionado = 300.000 – 120.000 + 10.000 = <strong>190.000</strong></p>
+</details>
+</div>
+
+</section>
+
+<p class="foot">© {year} · Prof. Max Vallim · Ciências Contábeis</p>
+
+</div>
+
+<script>
+document.body.innerHTML =
+ document.body.innerHTML.replaceAll('{year}', new Date().getFullYear());
+</script>
+
+
+<section id='atividade'>
+<h2>7. Atividade Interativa</h2>
+<div class='box'>
+<p>Preencha os campos abaixo para calcular sua própria DVA.</p>
+<label>Receita Líquida</label>
+<input id='receita' type='number'>
+<label>Total Insumos de Terceiros</label>
+<input id='insumos' type='number'>
+<label>Transferências Recebidas</label>
+<input id='transf' type='number'>
+<button onclick='calcVA()'>Calcular Valor Adicionado</button>
+<div id='resVA' class='result'></div>
+</div>
+</section>
+<script>
+function calcVA(){
+ let r = parseFloat(document.getElementById('receita').value) || 0;
+ let i = parseFloat(document.getElementById('insumos').value) || 0;
+ let t = parseFloat(document.getElementById('transf').value) || 0;
+ let vab = r - i;
+ let vat = vab + t;
+ document.getElementById('resVA').innerHTML = `VAB: R$ ${vab.toFixed(2)}<br>VAT: R$ ${vat.toFixed(2)}`;
+}
+<br>VAT: R$ ${vat}`;
+}
+</script>
+
+</body>
+</html>
