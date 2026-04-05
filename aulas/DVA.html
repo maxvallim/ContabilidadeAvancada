@@ -365,18 +365,21 @@ document.body.innerHTML =
 <div id='resVA' class='result'></div>
 </div>
 </section>
+
 <script>
-function calcVA(){
- let r = parseFloat(document.getElementById('receita').value) || 0;
- let i = parseFloat(document.getElementById('insumos').value) || 0;
- let t = parseFloat(document.getElementById('transf').value) || 0;
- let vab = r - i;
- let vat = vab + t;
- document.getElementById('resVA').innerHTML = `VAB: R$ ${vab.toFixed(2)}<br>VAT: R$ ${vat.toFixed(2)}`;
-}
-<br>VAT: R$ ${vat}`;
+function calcVA() {
+  let r = parseFloat(document.getElementById('receita').value) || 0;
+  let i = parseFloat(document.getElementById('insumos').value) || 0;
+  let t = parseFloat(document.getElementById('transf').value) || 0;
+
+  let vab = r - i;
+  let vat = vab + t;
+
+  document.getElementById('resVA').innerHTML =
+    `VAB: R$ ${vab.toFixed(2)}<br>VAT: R$ ${vat.toFixed(2)}`;
 }
 </script>
+
 
 </body>
 </html>
